@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyLane Air Cargo | Air freight from Ahmedabad</title>
+  <meta name="description" content="SkyLane Air Cargo moves time-critical freight from Ahmedabad to 40+ airports. Track shipments, see rates and view the operations dashboard.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVIGATION ===================== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="SkyLane Air Cargo, back to top">
+        <img src="images/logo.svg" alt="" width="36" height="36">
+        <span>SkyLane Air Cargo</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#track">Track shipment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== 1. HOME ===================== -->
+    <section id="home" class="hero">
+      <div class="wrap hero-grid">
+
+        <div class="hero-copy">
+          <img class="hero-logo" src="images/logo.svg" alt="SkyLane Air Cargo logo" width="64" height="64">
+          <h1>Freight that makes the flight.</h1>
+          <p class="lead">SkyLane Air Cargo moves time-critical freight from Ahmedabad to more than 40 airports in India and abroad, and shows you where every consignment is from booking to delivery.</p>
+          <p>Our purpose: take the waiting and guesswork out of air freight, so a missed flight never becomes a missed deadline.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#track">Get started</a>
+            <a class="btn btn-ghost" href="#services">See rates</a>
+          </div>
+        </div>
+
+        <!-- Interactive business feature: shipment tracking -->
+        <div class="tracker" id="track">
+          <h2>Track a shipment</h2>
+          <form id="track-form" novalidate>
+            <label for="awb">Air waybill number</label>
+            <div class="tracker-row">
+              <input id="awb" name="awb" type="text" inputmode="text" autocomplete="off" placeholder="e.g. SLC1025" maxlength="14">
+              <button class="btn btn-primary" type="submit">Track shipment</button>
+            </div>
+          </form>
+          <p class="chips" id="sample-chips">
+            <span>Sample numbers:</span>
+            <button type="button" data-awb="SLC1025">SLC1025</button>
+            <button type="button" data-awb="SLC1042">SLC1042</button>
+            <button type="button" data-awb="SLC1001">SLC1001</button>
+            <button type="button" data-awb="SLC1050">SLC1050</button>
+          </p>
+          <div id="track-result" class="track-result" aria-live="polite">
+            <p class="track-empty">Enter a waybill number to see status, route and the latest scan.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="runway" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== 2. ABOUT ===================== -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <h2 class="section-title">About SkyLane</h2>
+        <p class="section-intro">We are an air cargo logistics company based at the cargo terminal of Ahmedabad airport. We handle the whole journey: pickup, screening, flight, customs and final delivery.</p>
+        <dl class="about-grid">
+          <div>
+            <dt>What we do</dt>
+            <dd>We book, consolidate, screen and fly cargo on scheduled and chartered flights, then clear customs and deliver to the consignee's door.</dd>
+          </div>
+          <div>
+            <dt>Who we serve</dt>
+            <dd>Exporters of pharmaceuticals, textiles and engineering parts, e-commerce sellers with urgent restocks, and manufacturers who cannot afford a stopped production line.</dd>
+          </div>
+          <div>
+            <dt>Where we operate</dt>
+            <dd>Our hub is Ahmedabad (AMD), with daily links to Delhi, Mumbai, Dubai, Singapore, Frankfurt and London, and pickup across Gujarat.</dd>
+          </div>
+          <div>
+            <dt>Why shippers choose us</dt>
+            <dd>One waybill number gives live status and a named duty manager for every shipment. Pharma-grade 2 to 8 °C handling is run in our own terminal, not outsourced.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===================== 3. SERVICES ===================== -->
+    <section id="services" class="section section-alt">
+      <div class="wrap">
+        <h2 class="section-title">Services and rates</h2>
+        <p class="section-intro">Rates are per chargeable kilogram from Ahmedabad and exclude GST, fuel surcharge and destination charges.</p>
+
+        <div class="table-scroll">
+          <table class="rate-table">
+            <thead>
+              <tr>
+                <th scope="col">Service</th>
+                <th scope="col">What it covers</th>
+                <th scope="col">Transit time</th>
+                <th scope="col">Rate</th>
+                <th scope="col"><span class="visually-hidden">Action</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Domestic Express</th>
+                <td>Next-flight priority between Indian metros</td>
+                <td>Same day to next day</td>
+                <td>₹48 / kg (min ₹750)</td>
+                <td><a class="quote-link" href="#contact" data-service="Domestic Express">Get a quote</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Domestic Standard</th>
+                <td>Planned air freight for non-urgent cargo</td>
+                <td>1 to 2 days</td>
+                <td>₹26 / kg (min ₹500)</td>
+                <td><a class="quote-link" href="#contact" data-service="Domestic Standard">Get a quote</a></td>
+              </tr>
+              <tr>
+                <th scope="row">International Express</th>
+                <td>Priority uplift, export customs and destination handover</td>
+                <td>1 to 3 days</td>
+                <td>₹185 / kg (min ₹3,000)</td>
+                <td><a class="quote-link" href="#contact" data-service="International Express">Get a quote</a></td>
+              </tr>
+              <tr>
+                <th scope="row">International Economy</th>
+                <td>Consolidated freight on scheduled flights</td>
+                <td>3 to 5 days</td>
+                <td>₹120 / kg (min ₹2,500)</td>
+                <td><a class="quote-link" href="#contact" data-service="International Economy">Get a quote</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Pharma Cold Chain</th>
+                <td>2 to 8 °C storage, monitored loggers and priority loading</td>
+                <td>1 to 3 days</td>
+                <td>₹240 / kg (min ₹4,500)</td>
+                <td><a class="quote-link" href="#contact" data-service="Pharma Cold Chain">Get a quote</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Dangerous Goods Handling</th>
+                <td>Acceptance check, packing review and DG documentation</td>
+                <td>Added to the chosen service</td>
+                <td>₹150 / kg add-on</td>
+                <td><a class="quote-link" href="#contact" data-service="Dangerous Goods Handling">Get a quote</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="resources">
+          <h3>Before you ship: rules and documents</h3>
+          <ul>
+            <li><a href="https://www.icegate.gov.in" target="_blank" rel="noopener">ICEGATE (Indian Customs)</a> File shipping bills and check export clearance status before your cargo reaches our terminal.</li>
+            <li><a href="https://www.iata.org/en/programs/cargo/dgr/" target="_blank" rel="noopener">IATA Dangerous Goods Regulations</a> Confirm packing and labelling rules before you book the DG add-on.</li>
+            <li><a href="https://www.dgca.gov.in" target="_blank" rel="noopener">DGCA</a> Check Indian civil aviation requirements that apply to carried cargo.</li>
+            <li><a href="https://bcasindia.gov.in" target="_blank" rel="noopener">BCAS</a> Understand the security screening rules that every consignment must pass.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. DASHBOARD ===================== -->
+    <section id="dashboard" class="section section-dark">
+      <div class="wrap">
+        <h2 class="section-title">Operations dashboard</h2>
+        <p class="section-intro">What the duty manager needs to know before the first flight leaves. Figures are sample data for this class exercise.</p>
+
+        <div class="kpi-grid" id="kpi-grid"></div>
+
+        <div class="chart-grid">
+          <figure class="chart-panel">
+            <figcaption>Cargo uplifted per month (tonnes)</figcaption>
+            <div id="chart-tonnage" class="chart"></div>
+          </figure>
+          <figure class="chart-panel">
+            <figcaption>Shipment status this month</figcaption>
+            <div id="chart-status" class="chart chart-donut"></div>
+          </figure>
+          <figure class="chart-panel">
+            <figcaption>On-time delivery rate (%)</figcaption>
+            <div id="chart-ontime" class="chart"></div>
+          </figure>
+          <figure class="chart-panel">
+            <figcaption>Tonnes uplifted by route this month</figcaption>
+            <div id="chart-routes" class="chart"></div>
+          </figure>
+        </div>
+
+        <div class="action-panel">
+          <h3 id="delay-title">Delayed shipments to resolve first</h3>
+          <div class="table-scroll">
+            <table class="delay-table">
+              <thead>
+                <tr>
+                  <th scope="col">Waybill</th>
+                  <th scope="col">Route</th>
+                  <th scope="col">Reason</th>
+                  <th scope="col">Delay</th>
+                  <th scope="col"><span class="visually-hidden">Action</span></th>
+                </tr>
+              </thead>
+              <tbody id="delay-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. CONTACT / ENQUIRY ===================== -->
+    <section id="contact" class="section">
+      <div class="wrap contact-grid">
+
+        <div>
+          <h2 class="section-title">Contact and enquiry</h2>
+          <p class="section-intro">Tell us what you are shipping and where it needs to go. The 24x7 cargo desk replies with a quote within two hours.</p>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:cargo@skylanecargo.example">cargo@skylanecargo.example</a>
+            </li>
+            <li>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </li>
+            <li>
+              <span class="contact-label">Location</span>
+              <span>Cargo Terminal, Sardar Vallabhbhai Patel International Airport, Hansol, Ahmedabad, Gujarat 382475</span>
+            </li>
+            <li>
+              <span class="contact-label">Directions</span>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Sardar+Vallabhbhai+Patel+International+Airport+Cargo+Ahmedabad" target="_blank" rel="noopener">Open the cargo terminal in Google Maps</a>
+            </li>
+            <li>
+              <span class="contact-label">Hours</span>
+              <span>Cargo desk 24x7. Terminal acceptance 6:00 am to 10:00 pm.</span>
+            </li>
+          </ul>
+        </div>
+
+        <form id="enquiry-form" class="enquiry" novalidate>
+          <h3>Send an enquiry</h3>
+
+          <div class="field">
+            <label for="enq-name">Your name</label>
+            <input id="enq-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="enq-email">Email</label>
+              <input id="enq-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="enq-phone">Phone</label>
+              <input id="enq-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="enq-service">Service</label>
+            <select id="enq-service" name="service" required>
+              <option value="">Choose a service</option>
+              <option>Domestic Express</option>
+              <option>Domestic Standard</option>
+              <option>International Express</option>
+              <option>International Economy</option>
+              <option>Pharma Cold Chain</option>
+              <option>Dangerous Goods Handling</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="enq-dest">Destination airport or city</label>
+              <input id="enq-dest" name="destination" type="text" required>
+            </div>
+            <div class="field">
+              <label for="enq-weight">Approx. weight (kg)</label>
+              <input id="enq-weight" name="weight" type="number" min="1" step="1" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="enq-msg">What are you shipping? (optional)</label>
+            <textarea id="enq-msg" name="message" rows="3"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send enquiry</button>
+          <div id="enquiry-status" class="enquiry-status" aria-live="polite"></div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 SkyLane Air Cargo. A fictional business built for the ITBT live class exercise.</p>
+      <ul>
+        <li><a href="#home">Back to top</a></li>
+        <li><a href="#track">Track shipment</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
